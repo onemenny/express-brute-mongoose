@@ -9,7 +9,7 @@
     "compile": "babel --presets es2015 -d ./dist ./lib",
     "lint": "eslint ./lib ./test --quiet",
     "prepublish": "npm run compile",
-    "test": "mocha ./test --recursive --compilers js:babel-register --reporter spec"
+    "test": "npm run compile; mocha ./test --recursive --compilers js:babel-register --reporter spec"
   },
   "repository": {
     "type": "git",
