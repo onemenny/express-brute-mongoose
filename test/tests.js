@@ -64,4 +64,9 @@ describe('MongooseStore', function () {
         expect(data).toBe(null);
       });
   });
+
+  it('should be able to specify defaults', function () {
+    const store = new Store(() => {}, { prefix: 'testPrefix' });
+    expect(store.options.prefix).toBe('testPrefix');
+  });
 });
