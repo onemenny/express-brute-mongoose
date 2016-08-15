@@ -1,6 +1,6 @@
 {
   "name": "express-brute-mongoose",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Mongoose store for express-brute.",
   "author": "Chris Bargren <cbargren@gmail.com>",
   "homepage": "https://github.com/cbargren/express-brute-mongoose.git",
