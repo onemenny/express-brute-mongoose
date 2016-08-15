@@ -12,9 +12,7 @@ describe('MongooseStore', function () {
   beforeEach(function () {
     mongoose.Promise = Promise;
     this.model = mongoose.model('bruteforce', schema);
-    this.store = new Store(callback => {
-      callback(this.model);
-    });
+    this.store = new Store(this.model);
     return this.model.remove({}).exec();
   });
 
