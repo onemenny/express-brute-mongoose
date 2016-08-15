@@ -1,24 +1,21 @@
-MongoDB store adapter for the [express-brute](https://github.com/AdamPflug/express-brute).
+Mongoose store adapter for [express-brute](https://github.com/AdamPflug/express-brute).
 
 ## Installation
 
 ~~~
-npm install express-brute-mongo
+npm install express-brute-mongoose
 ~~~
 
 ## Usage
 
 ~~~javascript
 var ExpressBrute = require('express-brute'),
-var MongoStore = require('express-brute-mongo');
-var MongoClient = require('mongodb').MongoClient;
+var MongooseStore = require('express-brute-mongoose');
+var bruteForceSchema = require('express-brute-mongoose/schema');
+var MongooseClient = require('mongoose');
 
-var store = new MongoStore(function (ready) {
-  MongoClient.connect('mongodb://127.0.0.1:27017/test', function(err, db) {
-    if (err) throw err;
-    ready(db.collection('bruteforce-store'));
-  });
-});
+var model = mongoose.model('bruteforce', BruteForceSchema);
+var store = new MongooseStore(model);
 
 var bruteforce = new ExpressBrute(store);
 
@@ -30,22 +27,31 @@ app.post('/auth',
 );
 ~~~
 
-## Expire documents
+## Defining your Mongoose Schema
 
-Create an index with `expireAfterSeconds: 0` in mongo as follows:
+You can either use the default schema provided at `express-brute-mongoose/schema` or roll your own, as long as it matches the basic structural requirements of the schema as follows:
 
-```
-db.my_api_limits_coll.ensureIndex({expires: 1}, {expireAfterSeconds: 0});
-```
+~~~javascript
+{
+  "_id": String,
+  "data": {
+    "count": Number,
+    "lastRequest": Date,
+    "firstRequest": Date
+  },
+  "expires": Date
+}
+~~~
 
-## Issue Reporting
+The **default schema** included in the package includes a Mongo index on the `_id` field and another index that will automatically delete each entry 1 day after it has passed its `expires` time, in an effort to keep the collection clean.
 
-If you have found a bug or if you have a feature request, please report them at this repository issues section. Please do not report security vulnerabilities on the public GitHub issue tracker. The [Responsible Disclosure Program](https://auth0.com/whitehat) details the procedure for disclosing security issues.
+## Development
 
-## Author
+Build the package with
+`npm run compile`
 
-[Auth0](auth0.com)
+Run tests with
+`npm run test`
 
-## License
-
-This project is licensed under the MIT license. See the [LICENSE](LICENSE.txt) file for more info.
+Run the linter with
+`npm run lint`
