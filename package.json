@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "express-brute": "~0.5.0",
-    "moment": "~1.7.2",
+    "moment": "~2.14.1",
     "mongoose": "~4.5"
   }
 }
