@@ -1,5 +1,7 @@
 Mongoose store adapter for [express-brute](https://github.com/AdamPflug/express-brute).
 
+[![NPM](https://nodei.co/npm/express-brute-mongoose.png?compact=true)](https://npmjs.org/package/express-brute-mongoose)
+
 ## Installation
 
 ~~~
