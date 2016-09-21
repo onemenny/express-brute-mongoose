@@ -5,7 +5,7 @@ Mongoose store adapter for [express-brute](https://github.com/AdamPflug/express-
 ## Installation
 
 ~~~
-npm install express-brute-mongoose
+npm install express-brute-mongoose-anodot
 ~~~
 
 ## Usage
