@@ -1,9 +1,9 @@
 {
-  "name": "express-brute-mongoose",
+  "name": "express-brute-mongoose-anodot",
   "version": "0.0.6",
   "description": "Mongoose store for express-brute.",
   "author": "Chris Bargren <cbargren@gmail.com>",
-  "homepage": "https://github.com/cbargren/express-brute-mongoose.git",
+  "homepage": "https://github.com/onemenny/express-brute-mongoose",
   "main": "dist/index.js",
   "scripts": {
     "compile": "babel --presets es2015 -d ./dist ./lib",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/cbargren/express-brute-mongoose.git"
+    "url": "http://github.com/onemenny/express-brute-mongoose.git"
   },
   "engine": {
     "node": ">=0.4.0"
