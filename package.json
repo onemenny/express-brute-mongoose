@@ -38,8 +38,8 @@
     "mocha": "^2.4.5"
   },
   "dependencies": {
-    "express-brute": "~0.5.0",
-    "moment": "~2.14.1",
-    "mongoose": "~4.5"
+    "express-brute": ">=0.5.0",
+    "moment": ">=2.14.1",
+    "mongoose": ">=4.4.0"
   }
 }
